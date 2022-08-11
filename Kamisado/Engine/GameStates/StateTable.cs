@@ -13,9 +13,5 @@ namespace Kamisado.Engine.GameStates
             PlayerWon,
             ComputerWon
         }
-
-        public StateTable()
-        {
-        }
     }
 }

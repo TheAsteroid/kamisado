@@ -10,7 +10,7 @@ namespace Kamisado.GUI
             HEIGHT = 40,
             MARGIN = 2;
 
-        Tower tower;
+        private readonly Tower tower;
 
         public DrawableTower(BoardControl boardControl, Tower tower)
             : base(boardControl, new Size(WIDTH, HEIGHT), MARGIN)
@@ -34,9 +34,6 @@ namespace Kamisado.GUI
             g.DrawArc(boardControl.PlayerPens[tower.Player.Color], rect, 0, 360);
         }
 
-        public Tower Tower
-        {
-            get { return tower; }
-        }
+        public Tower Tower => tower;
     }
 }

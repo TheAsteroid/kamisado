@@ -35,7 +35,7 @@ namespace Kamisado.GUI
         {
             InitializeComponent();
 
-            this.SetStyle(
+            SetStyle(
               ControlStyles.AllPaintingInWmPaint |
               ControlStyles.UserPaint |
               ControlStyles.DoubleBuffer, true);
@@ -166,14 +166,14 @@ namespace Kamisado.GUI
         {
             if (backBuffer == null)
             {
-                backBuffer = new Bitmap(this.ClientSize.Width, this.ClientSize.Height);
+                backBuffer = new Bitmap(ClientSize.Width, ClientSize.Height);
             }
 
             Graphics g = Graphics.FromImage(backBuffer);
 
             g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
 
-            g.Clear(this.BackColor);
+            g.Clear(BackColor);
 
             if (fields != null)
             {

@@ -91,7 +91,6 @@
     <Reference Include="System.Messaging" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
@@ -104,7 +103,6 @@
     <Compile Include="Engine\GameController.cs" />
     <Compile Include="Engine\GameStates\ComputerWinningState.cs" />
     <Compile Include="Engine\GameStates\NewGameState.cs" />
-    <Compile Include="Engine\GameStates\StateBase.cs" />
     <Compile Include="Engine\GameStates\IGameState.cs" />
     <Compile Include="Engine\GameStates\ComputerState.cs" />
     <Compile Include="Engine\GameStates\InitialState.cs" />

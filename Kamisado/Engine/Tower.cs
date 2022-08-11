@@ -4,7 +4,7 @@ namespace Kamisado.Engine
 {
     public class Tower
     {
-        Board board;
+        private readonly Board board;
 
         public Tower(Board.Color color, Player player, Board board)
         {
@@ -21,17 +21,9 @@ namespace Kamisado.Engine
             private set;
         }
 
-        public Player Player
-        {
-            get;
-            private set;
-        }
+        public Player Player { get; }
 
-        public Board.Color Color
-        {
-            get;
-            private set;
-        }
+        public Board.Color Color { get; }
 
         /// <summary>
         /// The number of Sumo's on this piece. Use AddSumo to increase this number.

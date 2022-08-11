@@ -14,7 +14,7 @@ namespace Kamisado.GUI
             InitializeComponent();
             gameController = new GameController();
             gameController.CreateMessageQueue(boardControl.MessageBox, boardControl.MoveValuesBox);
-            SetDifficulty(GameController.Difficulty.Medium, this.menuMedium);
+            SetDifficulty(GameController.Difficulty.Medium, menuMedium);
             boardControl.GameController = gameController;
             boardControl.InitializeBoard();
         }

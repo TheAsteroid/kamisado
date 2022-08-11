@@ -1,14 +1,15 @@
 ﻿namespace Kamisado.Engine.GameStates
 {
-    public class ComputerState : StateBase, IGameState
+    public class ComputerState : IGameState
     {
-        public ComputerState(GameController gameController)
-            : base(gameController)
-        {
+        private readonly GameController gameController;
 
+        public ComputerState(GameController gameController)
+        {
+            this.gameController = gameController;
         }
 
-        public void EnterState(StateTable.Event ev)
+        public void Enter(StateTable.Event ev)
         {
             gameController.SetCurrentPlayer(Player.PlayerType.Computer);
 
@@ -30,17 +31,17 @@
             gameController.StateMachine.HandleEvent(eventDone);
         }
 
-        public void ExitState(StateTable.Event ev)
+        public void Exit(StateTable.Event ev)
         {
 
         }
 
-        public void HandleMouseDown(Engine.Point position)
+        public void HandleMouseDown(Point position)
         {
 
         }
 
-        public void HandleMouseUp(Engine.Point position)
+        public void HandleMouseUp(Point position)
         {
 
         }

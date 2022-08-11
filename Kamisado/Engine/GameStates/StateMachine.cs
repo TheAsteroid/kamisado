@@ -5,13 +5,10 @@ namespace Kamisado.Engine.GameStates
     public class StateMachine
     {
         IGameState currentState;
-        GameController gameController;
         StateTable stateTable;
 
         public StateMachine(GameController gameController)
         {
-            this.gameController = gameController;
-
             stateTable = StateTableFactory.Create(gameController);
 
             currentState = (from s in stateTable.Keys
@@ -19,18 +16,15 @@ namespace Kamisado.Engine.GameStates
                             select s).First();
         }
 
-        public IGameState CurrentState
-        {
-            get { return currentState; }
-        }
+        public IGameState CurrentState => currentState;
 
         public void HandleEvent(StateTable.Event ev)
         {
             if (stateTable[currentState].ContainsKey(ev))
             {
-                currentState.ExitState(ev);
+                currentState.Exit(ev);
                 currentState = stateTable[currentState][ev];
-                currentState.EnterState(ev);
+                currentState.Enter(ev);
             }
         }
 

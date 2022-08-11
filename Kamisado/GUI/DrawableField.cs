@@ -23,10 +23,6 @@ namespace Kamisado.GUI
             g.DrawLines(boardControl.BorderDarkPens[Field.Color], new System.Drawing.Point[] { topLeft, bottomLeft, bottomRight });
         }
 
-        public Field Field
-        {
-            get;
-            private set;
-        }
+        public Field Field { get; }
     }
 }

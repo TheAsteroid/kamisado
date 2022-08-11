@@ -25,26 +25,36 @@ namespace Kamisado.Engine
             Impossible = 7
         }
 
-        Player
-            player,
-            computer;
-        Player currentPlayer;
-        Tower currentTower;
-        Board board;
-        List<Point> possibleMoves;
-        bool isFirstMoveDone;
-        const int
+        private const int
             WINNING_Y_PLAYER = 0,
             WINNING_Y_COMPUTER = 7,
             WINNING_VALUE = 1000,
             BLOCKED_VALUE = 5,
             ATTACKING_VALUE = 10;
-        StateMachine stateMachine;
-        MessageQueue messageQueue;
-        int maxLevel;
+
+        private const char delim = ';';
+
+        private Player player;
+
+        private Player computer;
+
+        private Player currentPlayer;
+
+        private Tower currentTower;
+
+        private Board board;
+
+        private List<Point> possibleMoves;
+
+        private bool isFirstMoveDone;
+
+        private StateMachine stateMachine;
+
+        private MessageQueue messageQueue;
+
+        private int maxLevel;
 
         private StringBuilder sb;
-        const char delim = ';';
 
         public GameController()
         {
@@ -54,21 +64,11 @@ namespace Kamisado.Engine
             board = new Board();
         }
 
-        #region Properties
-        public Board Board
-        {
-            get { return board; }
-        }
+        public Board Board => board;
 
-        public Tower CurrentTower
-        {
-            get { return currentTower; }
-        }
+        public Tower CurrentTower => currentTower;
 
-        public Player CurrentPlayer
-        {
-            get { return currentPlayer; }
-        }
+        public Player CurrentPlayer => currentPlayer;
 
         public bool IsFirstMoveDone
         {
@@ -76,16 +76,9 @@ namespace Kamisado.Engine
             set { isFirstMoveDone = value; }
         }
 
-        public StateMachine StateMachine
-        {
-            get { return stateMachine; }
-        }
+        public StateMachine StateMachine => stateMachine;
 
-        public MessageQueue MessageQueue
-        {
-            get { return messageQueue; }
-        }
-        #endregion
+        public MessageQueue MessageQueue => messageQueue;
 
         public void CreateMessageQueue(Panel messageBox, Panel moveValuesBox)
         {
@@ -185,7 +178,7 @@ namespace Kamisado.Engine
 
         public void CalculatePossibleMoves()
         {
-            this.possibleMoves = GetPossibleMoves();
+            possibleMoves = GetPossibleMoves();
         }
 
         /// <summary>
@@ -340,7 +333,7 @@ namespace Kamisado.Engine
                 // Deepest level not reached? Go deeper (minimizing opponent)
                 else
                 {
-                    Tower oldCurrentTower = this.currentTower;
+                    Tower oldCurrentTower = currentTower;
                     // Switch player
                     currentPlayer = (currentPlayer == computer ? player : computer);
                     // Set current tower
@@ -444,7 +437,7 @@ namespace Kamisado.Engine
             {
                 // Tower can move, check other things
                 // The closer to the end of the field, the better
-                if (currentPlayer == this.player)
+                if (currentPlayer == player)
                 {
                     score += (Board.HEIGHT - 1) - position.Y;
                 }

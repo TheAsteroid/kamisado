@@ -2,12 +2,12 @@
 {
     public interface IGameState
     {
-        void EnterState(StateTable.Event ev);
+        void Enter(StateTable.Event ev);
 
-        void ExitState(StateTable.Event ev);
+        void Exit(StateTable.Event ev);
 
-        void HandleMouseDown(Engine.Point position);
+        void HandleMouseDown(Point position);
 
-        void HandleMouseUp(Engine.Point position);
+        void HandleMouseUp(Point position);
     }
 }

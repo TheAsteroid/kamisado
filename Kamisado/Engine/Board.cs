@@ -18,7 +18,7 @@
             Brown = 7
         };
 
-        Field[,] fields;
+        private readonly Field[,] fields;
 
         public Board(Player player = null, Player computer = null)
         {

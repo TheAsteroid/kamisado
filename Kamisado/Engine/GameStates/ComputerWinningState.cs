@@ -1,29 +1,30 @@
 ﻿namespace Kamisado.Engine.GameStates
 {
-    public class ComputerWinningState : StateBase, IGameState
+    public class ComputerWinningState : IGameState
     {
-        public ComputerWinningState(GameController gameController)
-            : base(gameController)
-        {
+        private readonly GameController gameController;
 
+        public ComputerWinningState(GameController gameController)
+        {
+            this.gameController = gameController;
         }
 
-        public void EnterState(StateTable.Event ev)
+        public void Enter(StateTable.Event ev)
         {
             gameController.MessageQueue.Queue("You lost this round...");
         }
 
-        public void ExitState(StateTable.Event ev)
+        public void Exit(StateTable.Event ev)
         {
 
         }
 
-        public void HandleMouseDown(Engine.Point position)
+        public void HandleMouseDown(Point position)
         {
 
         }
 
-        public void HandleMouseUp(Engine.Point position)
+        public void HandleMouseUp(Point position)
         {
 
         }

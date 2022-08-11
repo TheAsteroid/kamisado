@@ -7,10 +7,9 @@ namespace Kamisado.Engine
 {
     public class MessageQueue
     {
-        const int LABEL_HEIGHT = 15;
-        Panel messageBox;
-        Panel moveValuesBox;
-        bool showMoveValues;
+        private const int LABEL_HEIGHT = 15;
+        private readonly Panel messageBox;
+        private readonly Panel moveValuesBox;
 
         public MessageQueue(Panel messageBox, Panel moveValuesBox)
         {

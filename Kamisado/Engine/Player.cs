@@ -16,37 +16,25 @@ namespace Kamisado.Engine
             Black
         }
 
-        PlayerType type;
-        PlayerColor color;
-        Dictionary<Board.Color, Tower> towers;
-        int playDirection;
+        private readonly PlayerType type;
+        private readonly PlayerColor color;
+        private readonly Dictionary<Board.Color, Tower> towers;
+        private readonly int playDirection;
 
         public Player(PlayerType playerType, PlayerColor playerColor)
         {
-            this.type = playerType;
-            this.color = playerColor;
+            type = playerType;
+            color = playerColor;
             playDirection = type == PlayerType.Computer ? 1 : -1;
             towers = new Dictionary<Board.Color, Tower>();
         }
 
-        public PlayerType Type
-        {
-            get { return type; }
-        }
+        public PlayerType Type => type;
 
-        public PlayerColor Color
-        {
-            get { return color; }
-        }
+        public PlayerColor Color => color;
 
-        public Dictionary<Board.Color, Tower> Towers
-        {
-            get { return towers; }
-        }
+        public Dictionary<Board.Color, Tower> Towers => towers;
 
-        public int PlayDirection
-        {
-            get { return playDirection; }
-        }
+        public int PlayDirection => playDirection;
     }
 }

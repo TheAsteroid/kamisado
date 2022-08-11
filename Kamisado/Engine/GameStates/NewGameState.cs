@@ -1,14 +1,15 @@
 ﻿namespace Kamisado.Engine.GameStates
 {
-    public class NewGameState : StateBase, IGameState
+    public class NewGameState : IGameState
     {
-        public NewGameState(GameController gameController)
-            : base(gameController)
-        {
+        private readonly GameController gameController;
 
+        public NewGameState(GameController gameController)
+        {
+            this.gameController = gameController;
         }
 
-        public void EnterState(StateTable.Event ev)
+        public void Enter(StateTable.Event ev)
         {
             gameController.MessageQueue.Clear();
             if (ev == StateTable.Event.NewGameGold)
@@ -21,17 +22,17 @@
             }
         }
 
-        public void ExitState(StateTable.Event ev)
+        public void Exit(StateTable.Event ev)
         {
 
         }
 
-        public void HandleMouseDown(Engine.Point position)
+        public void HandleMouseDown(Point position)
         {
 
         }
 
-        public void HandleMouseUp(Engine.Point position)
+        public void HandleMouseUp(Point position)
         {
 
         }
