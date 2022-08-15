@@ -1,5 +1,7 @@
 # Kamisado
-PC version of the board game Kamisado, where the player plays against the computer. The current version does not include the advanced rules using the dragon teeth. The game only runs on Windows and requires at least .NET Framework 3.5 (I know... it was developed in 2011).
+PC version of the board game Kamisado, where the player plays against the computer. The current version does not include the advanced rules using the Sumo Rings. The game only runs on Windows and requires at least .NET Framework 3.5 (I know... it was developed in 2011).
+
+Version 1.0.0 is out now, download it here: https://github.com/TheAsteroid/kamisado/releases
 
 Players can start as either Black or Gold, where Black always has the first move.
 ![Game](https://user-images.githubusercontent.com/41196601/184161461-2544c17d-b060-4d42-9a37-bfb0b244044d.png)
